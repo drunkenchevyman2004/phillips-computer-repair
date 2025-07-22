@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phillips Computer Repair</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #34495e;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav a.active, nav a:hover {
+      background: #1abc9c;
+    }
+    .hero {
+      background: #3498db;
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .section {
+      padding: 40px 20px;
+      background: #fff;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 10px;
+    }
+    .section img {
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+    .testimonial {
+      background: #ecf0f1;
+      border-left: 5px solid #3498db;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 5px;
+      font-style: italic;
+    }
+    .testimonial cite {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: right;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Phillips Computer Repair</h1>
+    <p>Fast, Friendly, and Affordable Tech Support</p>
+  </header>
+
+  <nav>
+    <a href="#services" id="link-services">Services</a>
+    <a href="#about" id="link-about">About</a>
+    <a href="#testimonials" id="link-testimonials">Testimonials</a>
+    <a href="#contact" id="link-contact">Contact</a>
+  </nav>
+
+  <div class="hero">
+    <h2>Your Local Computer Expert</h2>
+    <p>From virus removal to hardware upgrades — we’ve got you covered!</p>
+  </div>
+
+  <div class="section" id="services">
+    <h3>Our Services</h3>
+    <ul>
+      <li>Virus & Malware Removal</li>
+      <li>Hardware Diagnostics & Repair</li>
+      <li>Data Backup & Recovery</li>
+      <li>Custom PC Builds</li>
+      <li>Software Installation & Troubleshooting</li>
+    </ul>
+    <img src="https://source.unsplash.com/800x400/?computer,repair" alt="Technician working on computer">
+  </div>
+
+  <div class="section" id="about">
+    <h3>About Michael</h3>
+    <p>With years of experience in IT support for a hospital, I bring professional, reliable, and honest service to every job. Whether it's a laptop that won't start or a network that won't connect, I’ll get it fixed quickly and affordably.</p>
+    <img src="https://source.unsplash.com/800x400/?it,technician" alt="Tech support help">
+  </div>
+
+  <div class="section" id="testimonials">
+    <h3>What Our Customers Say</h3>
+    <div class="testimonial">
+      "Michael fixed my PC in no time! Super friendly and explained everything clearly. Highly recommend!"
+      <cite>– Jessica M., Fresno</cite>
+    </div>
+    <div class="testimonial">
+      "I thought my files were gone forever, but Michael recovered everything. Lifesaver!"
+      <cite>– Dave P., Clovis</cite>
+    </div>
+    <div class="testimonial">
+      "Great prices and honest service. I won’t go anywhere else for computer repairs."
+      <cite>– Rosa V., Madera</cite>
+    </div>
+  </div>
+
+  <div class="section" id="contact">
+    <h3>Contact</h3>
+    <p>Email: michaelphillips@outlook.com</p>
+    <p>Phone: (559) 477-9097</p>
+    <p>Fresno, CA</p>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <img src="https://source.unsplash.com/800x400/?customer,service" alt="Customer support">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Phillips Computer Repair. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll(".section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
